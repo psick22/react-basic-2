@@ -1,0 +1,17 @@
+{
+  "name": "naive-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "simple1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10"
+  }
+}
