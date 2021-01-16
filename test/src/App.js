@@ -28,12 +28,12 @@ const MAX_AGE = 50;
 function reducer(state, action) {
   switch (action.type) {
     case 'setName':
-      return { ...state, name: state.name };
+      return { ...state, name: action.name };
     case 'setAge':
       if (action.age > MAX_AGE) {
         return { ...state, age: MAX_AGE };
       } else {
-        return { ...state, age: state.age };
+        return { ...state, age: action.age };
       }
     default:
       return state;
