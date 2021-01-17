@@ -1,23 +1,16 @@
 import React, { useReducer } from 'react';
 
+export const ProfileDispatch = React.createContext(null);
+
 export default function App() {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   return (
     <div>
       <p>{`name is ${state.name}`}</p>
       <p>{`age is ${state.age}`}</p>
-      <input
-        type='text'
-        value={state.name}
-        onChange={e =>
-          dispatch({ type: 'setName', name: e.currentTarget.value })
-        }
-      />
-      <input
-        type='number'
-        value={state.age}
-        onChange={e => dispatch({ type: 'setAge', age: e.currentTarget.value })}
-      />
+      <ProfileDispatch.Provider value={dispatch}>
+        <SomeComponent />
+      </ProfileDispatch.Provider>
     </div>
   );
 }
