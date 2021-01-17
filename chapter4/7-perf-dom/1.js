@@ -8,6 +8,7 @@ export default function App() {
   if (flag) {
     return (
       <div>
+        <Counter />
         <p>사과</p>
         <p>바나나</p>
       </div>
@@ -15,10 +16,19 @@ export default function App() {
   } else {
     return (
       <span>
+        <Counter />
         <p>사과</p>
-        <p>파인애플</p>
         <p>바나나</p>
       </span>
     );
   }
+}
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const id = setTimeout(() => setCount(prev => prev + 1), 100);
+    return () => clearTimeout(id);
+  });
+  return <p>count: {count}</p>;
 }

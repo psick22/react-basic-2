@@ -8,16 +8,16 @@ export default function App() {
   if (flag) {
     return (
       <div>
-        <p>사과</p>
-        <p>바나나</p>
+        <p key='apple'>사과</p>
+        <p key='banana'>바나나</p>
       </div>
     );
   } else {
     return (
       <span>
-        <p>사과</p>
-        <p>파인애플</p>
-        <p>바나나</p>
+        <p key='apple'>사과</p>
+        <p key='pineapple'>파인애플</p>
+        <p key='banana'>바나나</p>
       </span>
     );
   }

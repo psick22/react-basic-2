@@ -16,8 +16,8 @@ export default function App() {
     return (
       <span>
         <p>사과</p>
-        <p>파인애플</p>
         <p>바나나</p>
+        <p>파인애플</p>
       </span>
     );
   }
