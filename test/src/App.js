@@ -1,10 +1,22 @@
-import React from 'react';
-import FriendsPage from './container/FriendsPage';
+import React, { useState } from 'react';
+import useOnMounted from './useOnMounted';
 
 export default function App() {
   return (
     <div>
-      <FriendsPage />
+      <Profile />
     </div>
   );
 }
+function Profile({ userId }) {
+  const [user, setUser] = useState();
+  useOnMounted(() => fetchUser(userId).then(data => setUser(data)));
+
+  useEffect(() => {
+    fetchUser(userId).then(data => setUser(data));
+  }, []);
+
+  // ...
+}
+
+function fetchUser() {}
