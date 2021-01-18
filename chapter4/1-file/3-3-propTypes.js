@@ -19,8 +19,8 @@ MyComponent.propType = {
   // 배열에 포함된 값 중에서 하나를 만족
   // 'jone' => 참
   // 'messy' => 거짓
-  name: PropTypes.oneOf(['jone', 'mike']),
 
+  name: PropTypes.oneOf(['jone', 'mike']),
   // 배열에 포함된 타입 중에서 하나를 만족
   //   123 => 참
   // 'messy' => 참
