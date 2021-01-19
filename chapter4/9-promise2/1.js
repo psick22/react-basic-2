@@ -1,6 +1,6 @@
 requestData1()
   .then(data => {
-    console.log(dajte);
+    console.log(data);
     return requestData2;
   })
   .then(data => console.log(data));
