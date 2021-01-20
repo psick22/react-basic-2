@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { createStore, applyMiddleware } from 'redux';
 
 export default function App() {
-  const [flag, setFlag] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setFlag(prev => !prev), 1000);
-  });
-  if (flag) {
-    return (
-      <div>
-        <p>사과</p>
-        <p>바나나</p>
-      </div>
-    );
-  } else {
-    return (
-      <span>
-        <p>사과</p>
-        <p>파인애플</p>
-        <p>바나나</p>
-      </span>
-    );
-  }
+  return <div>test</div>;
 }
+const saveToLocalStorage = store => next => action => {
+  if (action.meta?.localStorageKey) {
+    localStorage.setItem(action.meta?.localStorageKey, JSON.stringify(action));
+  }
+  return next(action);
+};
+
+const myReducer = (state = { name: 'kirok' }, action) => {
+  console.log('myReducer');
+  if (action.type === 'someAction') {
+    return { name: 'changed' };
+  }
+  return state;
+};
+
+const store = createStore(myReducer, applyMiddleware(saveToLocalStorage));
+store.dispatch({
+  type: 'someAction',
+  title: 'something',
+  meta: { localStorageKey: '13123' },
+});
