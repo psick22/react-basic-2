@@ -5,7 +5,7 @@ import { message } from 'antd';
 /**
  *
  * @param {object} param
- * @param {'get' | 'post' =} param.method
+ * @param {'get' | 'post' =} param.method // = 는 optional을 의미
  * @param {string} param.url
  * @param {object=} param.params
  * @param {object=} param.data
