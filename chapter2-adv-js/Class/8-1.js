@@ -3,7 +3,7 @@ class Person {
   constructor(name) {
     this.name = name;
   }
-  printName = () => {
+  printName = function () {
     console.log(this.name);
   };
 }
