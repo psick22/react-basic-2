@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getNextFriend } from '../data';
+import { getNextFriend } from '../../data';
 import FriendList from '../component/FriendList';
 import NumberSelector from '../component/NumberSelector';
 
