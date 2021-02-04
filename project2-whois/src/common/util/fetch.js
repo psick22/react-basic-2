@@ -30,7 +30,7 @@ function getIsCallEffect(value) {
 export function makeFetchSaga({
   fetchSaga,
   canCache,
-  getTotalCount = res => res?.totalCount,
+  getTotalCount = res => res?.totalCount, // pagination 을 위해
 }) {
   return function* (action) {
     const { type: actionType } = action;

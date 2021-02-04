@@ -2,6 +2,7 @@ import { Menu, Dropdown, Button } from 'antd';
 import React from 'react';
 import { SettingFilled } from '@ant-design/icons';
 
+// Props 타입 정리 (JS도구)
 /**
  *  @param {object} param
  *  @param {()=>void} param.logout

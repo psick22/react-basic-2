@@ -1,5 +1,5 @@
-import { Col, Row, Typography } from 'antd';
 import React from 'react';
+import { Col, Row, Typography } from 'antd';
 import SearchInput from './SearchInput';
 import Settings from '../component/Settings';
 

@@ -4,22 +4,18 @@ import {
   setValueReducer,
 } from '../../common/redux-helper';
 
-// enum
 export const Types = {
-  SetValue: 'search/SetValue',
-  FetchAutoComplete: 'search/FetchAutoComplete',
+  SetValue: 'user/SetValue',
+  FetchUser: 'user/FetchUser',
 };
 
 export const actions = {
   setValue: createSetValueAction(Types.SetValue),
-  fetchAutoComplete: keyword => ({ type: Types.FetchAutoComplete, keyword }),
+  fetchUser: name => ({ type: Types.FetchUser, name }),
 };
-
 const INITIAL_STATE = {
-  keyword: '',
-  autoCompletes: [],
+  user: undefined,
 };
-
 const reducer = createReducer(INITIAL_STATE, {
   [Types.SetValue]: setValueReducer,
 });
